@@ -1,6 +1,7 @@
-# 🪙 Web Mining Event
+# 📰 MNI Portal Berita
 
-This is a modular web application built with **React**, **TypeScript**, and **React Router v7**. It uses a scalable feature-based folder structure and includes support for localization, middleware, and component reuse.
+Ini adalah aplikasi web modular yang dibangun dengan **React**, **TypeScript**, dan **React Router v7**.  
+Struktur folder menggunakan pendekatan feature-based sehingga mudah diskalakan, serta sudah mendukung **lokalisasi**, **middleware**, dan **reusable components**.
 
 ---
 
@@ -12,6 +13,7 @@ This is a modular web application built with **React**, **TypeScript**, and **Re
 npm install
 # or
 yarn install
+
 
 🧪 Run the App
 
@@ -41,18 +43,19 @@ yarn build
     🧩 Modular architecture
 
 ### 🗂️ Project Structure
-```bash
-web-mining-event/
+
+````bash
+mni-portal-berita/
 ├── .react-router/              # Optional: Router configs/meta
 ├── app/
 │   ├── components/             # Global/shared UI components
 │   ├── features/               # Feature-based modules
-│   │   ├── events/
-│   │   │   ├── __tests__/      # Unit/integration tests for Events
-│   │   │   ├── components/     # Components specific to Events
+│   │   ├── berita/             # Modul berita/artikel
+│   │   │   ├── __tests__/      # Unit/integration tests
+│   │   │   ├── components/     # Komponen khusus berita
 │   │   │   ├── models/         # Domain models (types/interfaces)
-│   │   │   ├── services/       # API/data logic for Events
-│   │   ├── home/
+│   │   │   ├── services/       # API/data logic berita
+│   │   ├── home/               # Modul halaman utama
 │   │   │   ├── __tests__/
 │   │   │   ├── components/
 │   │   │   ├── models/
@@ -62,21 +65,22 @@ web-mining-event/
 │   ├── locales/                # i18n folder
 │   │   ├── en/                 # English translations
 │   │   ├── id/                 # Indonesian translations
-│   ├── middleware/             # Custom middleware (auth, logging, etc.)
+│   ├── middleware/             # Custom middleware (auth, logging, dll.)
 │   ├── routes/                 # React Router v7 route files
-│   └── root.tsx                # App entry 
+│   └── root.tsx                # App entry
 │   └── routes.tsx              # Setup routes
-```
+
 
 ### 🧭 Routing
 
 This project uses React Router v7 manually defined in the routes/ folder and linked to components from features.
+
 ```bash
 Example:
 
 // routes/event.tsx
 import { EventPage } from "~/features/events/components/EventPage";
-```
+````
 
 ### 🌍 Localization
 
@@ -94,10 +98,12 @@ import { EventPage } from "~/features/events/components/EventPage";
 
 🧪 Testing
 
-Tests are colocated in __tests__ folders inside each feature module:
+Tests are colocated in **tests** folders inside each feature module:
+
 ```bash
 features/
 └── events/
     └── __tests__/
 ```
+
 Supports tools like Jest, Vitest, or your preferred test runner.
