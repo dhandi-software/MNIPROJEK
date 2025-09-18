@@ -41,7 +41,7 @@ export async function loader({ context, request }: Route.LoaderArgs) {
     const isMobile = ua.getDevice().type === "mobile";
     return data(
         { locale, isMobile },
-        { headers: { "Set-Cookie": await localeCookie.serialize(locale) } }
+        { headers: { "Set-Cookie": await localeCookie.serialize(locale) } },
     );
 }
 
@@ -76,6 +76,8 @@ export default function App() {
     useChangeLanguage(locale);
     return <Outlet context={{ isMobile } satisfies ContextType} />;
 }
+
+console.log("TEs");
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
     let message = "Oops!";

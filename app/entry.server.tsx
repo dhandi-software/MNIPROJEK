@@ -19,7 +19,7 @@ export default function handleRequest(
     responseStatusCode: number,
     responseHeaders: Headers,
     entryContext: EntryContext,
-    routerContext: unstable_RouterContextProvider
+    routerContext: unstable_RouterContextProvider,
 ) {
     return new Promise((resolve, reject) => {
         let shellRendered = false;
@@ -46,7 +46,7 @@ export default function handleRequest(
                         new Response(stream, {
                             headers: responseHeaders,
                             status: responseStatusCode,
-                        })
+                        }),
                     );
 
                     pipe(body);
@@ -58,7 +58,7 @@ export default function handleRequest(
                     responseStatusCode = 500;
                     if (shellRendered) console.error(error);
                 },
-            }
+            },
         );
 
         setTimeout(abort, streamTimeout + 1000);
